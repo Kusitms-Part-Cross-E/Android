@@ -10,10 +10,10 @@ class ArticleAdapter(
 
 ): RecyclerView.Adapter<ArticleAdapter.CustomViewHolder>() {
     private lateinit var itemClickListener: OnItemClickListener
-    private var articleList = listOf<ArticleResult>()
+    private var articleList = listOf<String>()
 
     inner class CustomViewHolder(private val binding: ItemBoardBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: ArticleResult) {
+        fun bind(item: String) {
 
         }
     }
@@ -35,7 +35,7 @@ class ArticleAdapter(
         this.itemClickListener = onItemClickListener
     }
 
-    fun setData(newList: List<ArticleResult>) {
+    fun setData(newList: List<String>) {
         articleList = newList
         notifyDataSetChanged()
     }

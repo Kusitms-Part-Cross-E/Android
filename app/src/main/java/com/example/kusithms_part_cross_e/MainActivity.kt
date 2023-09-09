@@ -2,6 +2,7 @@ package com.example.kusithms_part_cross_e
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kusithms_part_cross_e.RetrofitInstance.service
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
 
         articleAdapter = ArticleAdapter()
 
+        articleAdapter.setData(List(3) {"1"})
+
         binding.rvArticle.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = articleAdapter
@@ -29,5 +32,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        binding.fabMain.setOnClickListener {
+            Toast.makeText(this, "adsad", Toast.LENGTH_SHORT).show()
+        }
     }
 }
