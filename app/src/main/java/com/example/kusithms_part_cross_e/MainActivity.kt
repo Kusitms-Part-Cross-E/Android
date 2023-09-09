@@ -3,6 +3,7 @@ package com.example.kusithms_part_cross_e
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        articleAdapter = ArticleAdapter()
+        articleAdapter = ArticleAdapter(this)
 
         viewModel.getArticleList()
 
@@ -32,9 +33,12 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
         }
 
+
         articleAdapter.setItemClickListener(object : ArticleAdapter.OnItemClickListener {
             override fun onClick(v: View, position: Int) {
-                startActivity(Intent(this@MainActivity, DetailActivity::class.java))
+                startActivity(Intent(this@MainActivity, DetailActivity::class.java).apply {
+                    putExtra("article_id", viewModel.articleList.value?.data?.get(position)?.articleId)
+                })
             }
         })
 

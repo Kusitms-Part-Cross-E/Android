@@ -5,6 +5,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface RetrofitService {
     @GET("/api/v1/articles")
@@ -12,4 +13,9 @@ interface RetrofitService {
 
     @POST("/api/v1/articles")
     fun writeArticle(@Body parameters: WriteArticleRequest): Call<WriteArticleResponse>
+    @GET("/api/v1/articles/{articleId}")
+    suspend fun getArticleDetail(
+        @Path("articleId") articleId: Int
+    ): Response<ArticleResult>
+
 }
