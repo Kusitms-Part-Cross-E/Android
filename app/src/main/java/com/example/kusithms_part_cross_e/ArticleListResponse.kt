@@ -10,12 +10,9 @@ data class ArticleResult(
     val articleId: Int,
     val title: String,
     val description: String,
-    val tagList: List<TagList>,
+    val tagList: List<String>,
     val body: String,
     val createdAt: String,
     val updatedAt: String,
 )
 
-data class TagList(
-    val tag : String
-)

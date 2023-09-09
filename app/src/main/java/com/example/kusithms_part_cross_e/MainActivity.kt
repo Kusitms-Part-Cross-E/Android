@@ -19,13 +19,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         articleAdapter = ArticleAdapter()
 
-        articleAdapter.setData(List(3) {"1"})
+        viewModel.getArticleList()
 
         binding.rvArticle.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
@@ -39,9 +38,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-
         binding.fabMain.setOnClickListener {
             startActivity(Intent(this, WriteActivity::class.java))
+        }
+
+        viewModel.articleList.observe(this) {
+            articleAdapter.setData(it.data)
         }
     }
 }
