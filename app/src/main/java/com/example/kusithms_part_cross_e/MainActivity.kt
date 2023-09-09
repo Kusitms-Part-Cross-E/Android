@@ -3,6 +3,7 @@ package com.example.kusithms_part_cross_e
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +32,12 @@ class MainActivity : AppCompatActivity() {
             adapter = articleAdapter
             setHasFixedSize(true)
         }
+
+        articleAdapter.setItemClickListener(object : ArticleAdapter.OnItemClickListener {
+            override fun onClick(v: View, position: Int) {
+                startActivity(Intent(this@MainActivity, DetailActivity::class.java))
+            }
+        })
 
 
         binding.fabMain.setOnClickListener {

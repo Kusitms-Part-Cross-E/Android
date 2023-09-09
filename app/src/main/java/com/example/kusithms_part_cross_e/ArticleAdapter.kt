@@ -14,7 +14,9 @@ class ArticleAdapter(
 
     inner class CustomViewHolder(private val binding: ItemBoardBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: String) {
-
+//            binding.tvTitle.text =
+//            binding.tvDescription.text =
+//            binding.tvTime.text =
         }
     }
 
@@ -25,10 +27,14 @@ class ArticleAdapter(
 
     override fun onBindViewHolder(holder: ArticleAdapter.CustomViewHolder, position: Int) {
         holder.bind(articleList[position])
+
+        holder.itemView.setOnClickListener {
+            itemClickListener.onClick(it, position)
+        }
     }
 
     interface OnItemClickListener {
-        fun onClickAnswer(v: View, position: Int)
+        fun onClick(v: View, position: Int)
     }
 
     fun setItemClickListener(onItemClickListener: OnItemClickListener) {
