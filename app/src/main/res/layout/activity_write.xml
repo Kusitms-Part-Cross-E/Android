@@ -36,7 +36,8 @@
                 android:id="@+id/textViewWriteTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="제목" />
+                android:text="제목"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextWriteTitle"
@@ -52,7 +53,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="내용" />
+                android:text="내용"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutWriteContent"
@@ -79,27 +81,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checkable="true"
-                    android:text="STUDY" />
+                    android:text="STUDY"
+                    app:chipBackgroundColor="@color/chip_color" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipWriteTag2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checkable="true"
-                    android:text="HEALTH" />
+                    android:text="HEALTH"
+                    app:chipBackgroundColor="@color/chip_color" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipWriteTag3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checkable="true"
-                    android:text="DRINK" />
+                    android:text="DRINK"
+                    app:chipBackgroundColor="@color/chip_color" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipWriteTag4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checkable="true" />
+                    android:checkable="true"
+                    android:text="OTHER"
+                    app:chipBackgroundColor="@color/chip_color" />
             </com.google.android.material.chip.ChipGroup>
 
         </LinearLayout>
@@ -113,6 +120,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
         android:text="작성 완료"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

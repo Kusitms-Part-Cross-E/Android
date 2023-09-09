@@ -45,7 +45,6 @@ class DetailActivity : AppCompatActivity() {
                             chipDetailTag2.isCheckable = true
                             chipDetailTag3.isCheckable = true
                             chipDetailTag4.isCheckable = true
-
                         }
 
                         R.id.item_delete -> {
