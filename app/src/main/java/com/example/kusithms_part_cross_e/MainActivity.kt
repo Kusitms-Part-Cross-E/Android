@@ -8,6 +8,7 @@ import com.example.kusithms_part_cross_e.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private var _binding : ActivityMainBinding? = null
     private val binding get() = _binding!!
+//    private viewModel by
 
     private lateinit var articleAdapter: ArticleAdapter
 
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvArticle.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = articleAdapter
+            setHasFixedSize(true)
         }
 
 
