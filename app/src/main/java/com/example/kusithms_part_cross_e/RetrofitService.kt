@@ -1,9 +1,10 @@
 package com.example.kusithms_part_cross_e
 
+import retrofit2.Response
 import retrofit2.http.GET
 
 interface RetrofitService {
     @GET("/api/v1/articles")
-    suspend fun getArticleList(): ArticleListResponse
+    suspend fun getArticleList(): Response<ArticleListResponse>
 
 }

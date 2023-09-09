@@ -11,7 +11,8 @@ class MainViewModel: ViewModel() {
 
     fun getArticleList() {
         viewModelScope.launch {
-            service.getArticleList()
+            val response = service.getArticleList()
+            articleList.postValue(response.body())
         }
     }
 }

@@ -5,7 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
 object RetrofitInstance {
-    const val BASE_URL = ""
+    const val BASE_URL = "ec2-13-125-8-175.ap-northeast-2.compute.amazonaws.com"
 
     private val okHttpClient: OkHttpClient by lazy {
         val httpLoggingInterceptor = HttpLoggingInterceptor()

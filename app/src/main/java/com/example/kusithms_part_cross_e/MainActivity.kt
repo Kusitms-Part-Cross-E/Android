@@ -1,5 +1,6 @@
 package com.example.kusithms_part_cross_e
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.fabMain.setOnClickListener {
-            Toast.makeText(this, "adsad", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, WriteActivity::class.java))
         }
     }
 }
